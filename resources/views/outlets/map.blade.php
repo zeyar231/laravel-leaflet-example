@@ -45,24 +45,24 @@
         console.log(error);
     });
 
-    @can('create', new App\Outlet)
-    var theMarker;
+    // @can('create', new App\Outlet)
+    // var theMarker;
 
-    map.on('click', function(e) {
-        let latitude = e.latlng.lat.toString().substring(0, 15);
-        let longitude = e.latlng.lng.toString().substring(0, 15);
+    // map.on('click', function(e) {
+    //     let latitude = e.latlng.lat.toString().substring(0, 15);
+    //     let longitude = e.latlng.lng.toString().substring(0, 15);
 
-        if (theMarker != undefined) {
-            map.removeLayer(theMarker);
-        };
+    //     if (theMarker != undefined) {
+    //         map.removeLayer(theMarker);
+    //     };
 
-        var popupContent = "Your location : " + latitude + ", " + longitude + ".";
-        popupContent += '<br><a href="{{ route('outlets.create') }}?latitude=' + latitude + '&longitude=' + longitude + '">Add new outlet here</a>';
+    //     var popupContent = "Your location : " + latitude + ", " + longitude + ".";
+    //     popupContent += '<br><a href="{{ route('outlets.create') }}?latitude=' + latitude + '&longitude=' + longitude + '">Add new outlet here</a>';
 
-        theMarker = L.marker([latitude, longitude]).addTo(map);
-        theMarker.bindPopup(popupContent)
-        .openPopup();
-    });
-    @endcan
+    //     theMarker = L.marker([latitude, longitude]).addTo(map);
+    //     theMarker.bindPopup(popupContent)
+    //     .openPopup();
+    // });
+    // @endcan
 </script>
 @endpush
